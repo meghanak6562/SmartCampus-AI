@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SmartCampus AI</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="navbar">
+    <div class="brand"><span class="logo">✦</span> SmartCampus <b>AI</b></div>
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#assistant">AI Assistant</a>
+      <a href="#report">Report Issue</a>
+      <a href="#notices">Notices</a>
+    </nav>
+    <button class="menu-btn" onclick="toggleMenu()">☰</button>
+  </header>
+
+  <main>
+    <section id="home" class="hero">
+      <div class="hero-text">
+        <span class="pill">AI-POWERED CAMPUS PLATFORM</span>
+        <h1>Your Campus.<br><span>Smarter.</span> Simpler.</h1>
+        <p>Ask questions, find campus information and report problems — all from one intelligent platform.</p>
+        <div class="hero-buttons">
+          <a class="primary" href="#assistant">Ask Campus AI →</a>
+          <a class="secondary" href="#report">Report an Issue</a>
+        </div>
+      </div>
+      <div class="hero-card">
+        <div class="bot">🤖</div>
+        <div>
+          <strong>Campus AI Assistant</strong>
+          <p>“How can I report a broken water cooler?”</p>
+          <div class="answer">Sure! Tell me the location and I'll create a maintenance report for you.</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="features">
+      <div class="feature"><span>🤖</span><h3>AI Assistant</h3><p>Get quick answers to campus-related questions.</p></div>
+      <div class="feature"><span>📝</span><h3>Smart Complaints</h3><p>Report campus problems in simple language.</p></div>
+      <div class="feature"><span>📢</span><h3>Notices</h3><p>Keep track of important campus updates.</p></div>
+      <div class="feature"><span>📍</span><h3>Campus Guide</h3><p>Find labs, departments and facilities.</p></div>
+    </section>
+
+    <section id="assistant" class="section">
+      <div class="section-heading">
+        <span class="pill">AI ASSISTANT</span>
+        <h2>Ask SmartCampus AI</h2>
+        <p>Try a question below. This prototype uses demo responses; the real AI API can be connected next.</p>
+      </div>
+      <div class="assistant-box">
+        <div id="chat" class="chat">
+          <div class="message ai">Hi! 👋 I'm SmartCampus AI. How can I help you today?</div>
+        </div>
+        <div class="quick">
+          <button onclick="ask('Where is the library?')">📚 Library</button>
+          <button onclick="ask('How do I report a campus problem?')">🛠 Report problem</button>
+          <button onclick="ask('What are the college timings?')">🕘 Timings</button>
+          <button onclick="ask('What notices are available?')">📢 Notices</button>
+        </div>
+        <div class="chat-input">
+          <input id="question" placeholder="Ask something about the campus..." onkeydown="if(event.key==='Enter') sendMessage()" />
+          <button onclick="sendMessage()">Send</button>
+        </div>
+      </div>
+    </section>
+
+    <section id="report" class="section alt">
+      <div class="section-heading">
+        <span class="pill">SMART COMPLAINTS</span>
+        <h2>Report a Campus Issue</h2>
+        <p>Describe the problem normally. The system can later use AI to classify and prioritize it.</p>
+      </div>
+      <form id="reportForm" class="report-form">
+        <label>Your name <input id="name" required placeholder="Enter your name"></label>
+        <label>Location <input id="location" required placeholder="Example: Block B, 2nd floor"></label>
+        <label>Describe the issue
+          <textarea id="issue" required placeholder="Example: The water cooler near the lab is not working."></textarea>
+        </label>
+        <button class="primary" type="submit">Submit Issue</button>
+        <div id="reportResult" class="result"></div>
+      </form>
+    </section>
+
+    <section id="notices" class="section">
+      <div class="section-heading">
+        <span class="pill">CAMPUS UPDATES</span>
+        <h2>Latest Notices</h2>
+      </div>
+      <div class="notice-grid">
+        <article><span>📅</span><div><b>Internal Assessment</b><p>Check the department notice board for the updated schedule.</p></div></article>
+        <article><span>🎓</span><div><b>Student Services</b><p>Scholarship and student-support information is available at the office.</p></div></article>
+        <article><span>🏆</span><div><b>Campus Event</b><p>Watch this space for upcoming workshops and technical events.</p></div></article>
+      </div>
+    </section>
+  </main>
+
+  <footer>SmartCampus AI • Prompt Wars Hackathon Prototype</footer>
+  <script src="script.js"></script>
+</body>
+</html>
