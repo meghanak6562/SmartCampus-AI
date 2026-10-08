@@ -29,7 +29,7 @@ export default async function handler(req, res) {
           "x-goog-api-key": process.env.GEMINI_API_KEY
         },
         body: JSON.stringify({
-          model: "gemini-3.8-flash",
+          model: "gemini-3.7-flash",
           system_instruction:
             "You are SmartCampus AI, a helpful AI assistant for college students. Answer campus-related questions clearly and simply. If the user asks about a specific campus detail that you do not know, say that you do not have that information rather than making it up. Be friendly, concise and useful.",
           input: message
